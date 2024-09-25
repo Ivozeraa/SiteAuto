@@ -88,6 +88,7 @@ function startScanner() {
     });
 }
 
+
 // Função para adicionar produto à lista e calcular o total
 function addProductToList(product, price) {
     const productList = document.getElementById('product-list');

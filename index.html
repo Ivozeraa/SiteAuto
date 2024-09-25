@@ -15,7 +15,6 @@
             <a href=""><p>Home</p></a>
             <a href=""><p>Produtos</p></a>
             <a href=""><p>Sobre</p></a>
-
         </nav>
     </header>
 
@@ -35,8 +34,8 @@
             <div class="barcode-entry">
                 <button onclick="startScanner()">Iniciar Leitor de Código de Barras (Câmera)</button>
                 <div id="scanner-container" style="display: none;">
-                    <!-- O vídeo será exibido aqui -->
-                    <video id="scanner-preview"></video>
+                    <!-- Substituído o <video> pelo <div> -->
+                    <div id="scanner-preview"></div>
                 </div>
                 <input type="text" id="barcode" placeholder="Escaneie o código de barras" required>
                 <button onclick="addProductByBarcode()">Adicionar via Código de Barras</button>
@@ -56,6 +55,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
 </body>
 </html>
