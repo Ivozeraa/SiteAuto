@@ -27,18 +27,6 @@ document.getElementById('login-form').addEventListener('submit', function(event)
 
 let total = 0;
 
-// Função para adicionar produto manualmente
-function addProduct() {
-    const product = document.getElementById('product').value;
-    const price = parseFloat(document.getElementById('price').value);
-
-    if (product && price && price > 0) {
-        addProductToList(product, price);
-    } else {
-        alert('Preencha os campos corretamente.');
-    }
-}
-
 // Função para adicionar produto via código de barras
 function addProductByBarcode() {
     const barcode = document.getElementById('barcode').value;
@@ -87,7 +75,6 @@ function startScanner() {
         document.getElementById('scanner-container').style.display = 'none';
     });
 }
-
 
 // Função para adicionar produto à lista e calcular o total
 function addProductToList(product, price) {
