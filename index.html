@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Automático - Supermercado</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="" alt="">
+        <h1>AutoCash</h1>
+        <nav>
+            <a href=""><p>Home</p></a>
+            <a href=""><p>Produtos</p></a>
+            <a href=""><p>Sobre</p></a>
+
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="login-section" class="login-box">
+            <h2>Login</h2>
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Usuário" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+                <p id="error-message"></p>
+            </form>
+        </div>
+
+        <div id="checkout-section" class="checkout-box" style="display: none;">
+            <h2>Caixa Automático</h2>
+            <div class="barcode-entry">
+                <button onclick="startScanner()">Iniciar Leitor de Código de Barras (Câmera)</button>
+                <div id="scanner-container" style="display: none;">
+                    <!-- O vídeo será exibido aqui -->
+                    <video id="scanner-preview"></video>
+                </div>
+                <input type="text" id="barcode" placeholder="Escaneie o código de barras" required>
+                <button onclick="addProductByBarcode()">Adicionar via Código de Barras</button>
+            </div>
+            <div class="product-entry">
+                <input type="text" id="product" placeholder="Nome do Produto" required>
+                <input type="number" id="price" placeholder="Preço" required>
+                <button onclick="addProduct()">Adicionar Produto</button>
+            </div>
+            <div class="product-list">
+                <h3>Produtos</h3>
+                <ul id="product-list"></ul>
+                <p>Total: R$ <span id="total-price">0.00</span></p>
+                <button onclick="finalizePurchase()">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
